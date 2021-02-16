@@ -12,11 +12,18 @@ end
 get '/name' do
   "olga"
 end
+
 get '/drink' do
   "tea"
 end
 
-get'/cat' do
- @random_name = ["Swiss", "Pug", "Chocolate"].sample
+get'/random_cat' do
+  @random_name = ["Swiss", "Chocolate", "Pug"].sample
+  erb(:index)
+end
+
+get'/named_cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
